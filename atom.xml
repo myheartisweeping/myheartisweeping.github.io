@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Bruce&#39;s blog</title>
+  
+  <subtitle>龙哥的博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-04-09T14:02:40.233Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Bruce</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开博大吉</title>
+    <link href="http://yoursite.com/2018/04/06/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/"/>
+    <id>http://yoursite.com/2018/04/06/开博大吉/</id>
+    <published>2018-04-06T14:06:05.000Z</published>
+    <updated>2018-04-09T14:02:40.233Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>    生活总显得忙忙碌碌，却又一无所获，总想写点什么，却又总是提笔忘字。也许是时候该给自己寻找一片天地，静下心来，好好认识自己，也好好的去认识这个世界。这里将成为我日后的一片净土，学习、生活中的点滴都将在这里留下痕迹。</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code&gt;    生活总显得忙忙碌碌，却又一无所获，总想写点什么，却又总是提笔忘字。也许是时候该给自己寻找一片天地，静下心来，好好认识自己，也好好的去认识这个世界。这里将成为
+我日后的一片净土，学习、生活中的点滴都将在这里留下痕迹。
+&lt;/code&gt;&lt;/pre&gt;
+      
+    
+    </summary>
+    
+      <category term="随想" scheme="http://yoursite.com/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+      <category term="杂想" scheme="http://yoursite.com/tags/%E6%9D%82%E6%83%B3/"/>
+    
+  </entry>
+  
+</feed>
