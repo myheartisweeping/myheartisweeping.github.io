@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-24T04:26:53.472Z</updated>
+  <updated>2018-04-28T03:22:17.771Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>写给来不及长大的孩子们</title>
+    <link href="http://yoursite.com/2018/04/28/%E6%97%A0%E9%A2%981/"/>
+    <id>http://yoursite.com/2018/04/28/无题1/</id>
+    <published>2018-04-28T02:03:31.000Z</published>
+    <updated>2018-04-28T03:22:17.771Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　<img src="https://cdn.pixabay.com/photo/2016/04/22/19/23/memory-1346375__340.jpg" alt=""></p><p>　　一阵急促的电话声将思绪拉回了现实，是大姐打过来的，告诉我出门多加小心，米脂发生了恶性砍人事件<a id="more"></a>，数十名学生伤亡。拿起手机才看到这个消息早已铺天盖地。</p><p>　　<img src="/images/米脂事件.jpg" width="200" height="100" alt="图片名称" align="center"></p><p>　　这件事情发生在陕北的黄土地上。陕北自古以来就是一片贫瘠与荒凉的土地，贫穷与苦难似乎从未在这片土地上消失。上天的眷顾对于生活在这里的人民而言，可望而不可即。可这次上天却偏偏与这里的人民开了一个不小的玩笑。一朵朵还未绽放美丽的花朵在一场突如其来的暴风雨中纷纷凋零。可春天才刚刚到来啊。还记得在上篇文章中说过，人总是个矛盾体，小时候总盼望着长大，可长大后又总希望回到小时候。如今，我依然可以希望自己回到小时候，可有的人却再也无法长大，再也没有机会盼望长大，也再没有机会去体验人世的繁华与落寞。面对这残酷的现实，我无能为力，仅以此文作为与他们的告别，希望他们在那遥远的世界不再拥有暴风雨。</p><p>　　一个平平常常的日子</p><p>　　你们一如既往的在教室里等待放学的铃声</p><p>　　可今天你们却比往常激动些许</p><p>　　因为，明天就是五一假期了</p><p>　　默念着一分一秒</p><p>　　心早已飞到了家里</p><p>　　飞到了母亲为你准备的菜肴里</p><p>　　飞到了父亲为你准备的玩具里</p><p>　　你还没有忘记</p><p>　　爸爸妈妈要带你去动物园</p><p>　　带你去游乐园呢</p><p>　　铃声终于响了，你们如箭一般</p><p>　　冲出了教室</p><p>　　三五成群的奔向了回家的路</p><p>　　可今天回家的路却异常的遥远，异常的长久</p><p>　　一条恶狗挡住了你们的去路</p><p>　　你们惊慌失措，四散逃走</p><p>　　哭喊着：快跑、快跑啊</p><p>　　可你们还是慢了</p><p>　　在恶狗的撕咬下</p><p>　　你们倒在了血泊之中</p><p>　　焦躁的父母沿路寻来</p><p>　　赶走了恶狗</p><p>　　抱起血泊中的你声嘶力竭</p><p>　　可这一切，你都无动于衷</p><p>　　你是不是累了</p><p>　　你是不是睡着了</p><p>　　你是不是做了一个很长很长的梦</p><p>　　在梦里你去了一个很远很远的地方</p><p>　　那里没有繁重的作业</p><p>　　也没有丑陋的恶狗</p><p>　　只有阳光与露水的沐浴</p><p>　　如若真是这样</p><p>　　你一定要记着到爸爸妈妈的梦里来</p><p>　　告诉他们，在那里，你很好，好吗</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　&lt;img src=&quot;https://cdn.pixabay.com/photo/2016/04/22/19/23/memory-1346375__340.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;　　一阵急促的电话声将思绪拉回了现实，是大姐打过来的，告诉我出门多加小心，米脂发生了恶性砍人事件
+    
+    </summary>
+    
+      <category term="浮生日记" scheme="http://yoursite.com/categories/%E6%B5%AE%E7%94%9F%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="life" scheme="http://yoursite.com/tags/life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图像压缩之JPEG-LS算法理解</title>
+    <link href="http://yoursite.com/2018/04/26/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2018/04/26/学习笔记/</id>
+    <published>2018-04-26T02:33:50.000Z</published>
+    <updated>2018-04-28T02:42:13.170Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　<img src="https://cdn.pixabay.com/photo/2017/10/26/17/51/under-2891888__340.jpg" alt=""></p><h2 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h2><p>　　互联网的发展很多时候得益于多媒体信息的繁荣，而图像作为多媒体信息的组成部分占据着很重要的作用。但是<a id="more"></a>图像所占据的存储空间也越来越大，对于数据的传输和存储都带来了很大的压力。因此，图像压缩这一领域应势而生。图像压缩分为有损压缩和无损压缩。有损压缩会消除一部分冗余信息，但不会影响视觉感受，所以压缩比较高。而无损压缩则应用于对图像要求较高的航天及医学等领域。本文主要介绍无损压缩中的JPEG-LS算法。</p><p>　　JPEG-LS为JPEG的无损/近无损压缩新标准，于1994年开始征集算法提案，1998年2月ITU-T建议T.87（草案）正式公布，用于取代原JPEG的连续色调静止图像的无损压缩模式。</p><p>　　JPEG-LS压缩主要分为三大模块，一是预测，二是上下文建模，三是编码。框图如下：</p><h2 id="算法详解"><a href="#算法详解" class="headerlink" title="算法详解"></a>算法详解</h2><p>　　未完待续……</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　&lt;img src=&quot;https://cdn.pixabay.com/photo/2017/10/26/17/51/under-2891888__340.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;算法概述&quot;&gt;&lt;a href=&quot;#算法概述&quot; class=&quot;headerlink&quot; title=&quot;算法概述&quot;&gt;&lt;/a&gt;算法概述&lt;/h2&gt;&lt;p&gt;　　互联网的发展很多时候得益于多媒体信息的繁荣，而图像作为多媒体信息的组成部分占据着很重要的作用。但是
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="JPEG-LS" scheme="http://yoursite.com/tags/JPEG-LS/"/>
+    
+      <category term="无损压缩" scheme="http://yoursite.com/tags/%E6%97%A0%E6%8D%9F%E5%8E%8B%E7%BC%A9/"/>
+    
+  </entry>
   
   <entry>
     <title>无题</title>
