@@ -108,7 +108,11 @@
 <meta property="og:description" content="算法概述　　互联网的发展很多时候得益于多媒体信息的繁荣，而图像作为多媒体信息的组成部分占据着很重要的作用。但是">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/10/26/17/51/under-2891888__340.jpg">
-<meta property="og:updated_time" content="2018-04-28T02:42:13.170Z">
+<meta property="og:image" content="http://yoursite.com/images/流程框图.png">
+<meta property="og:image" content="http://yoursite.com/images/像素.png">
+<meta property="og:image" content="http://yoursite.com/images/水平.png">
+<meta property="og:image" content="http://yoursite.com/images/对角线.png">
+<meta property="og:updated_time" content="2018-06-14T14:32:13.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图像压缩之JPEG-LS算法理解">
 <meta name="twitter:description" content="算法概述　　互联网的发展很多时候得益于多媒体信息的繁荣，而图像作为多媒体信息的组成部分占据着很重要的作用。但是">
@@ -378,7 +382,27 @@
 <h2 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h2><p>　　互联网的发展很多时候得益于多媒体信息的繁荣，而图像作为多媒体信息的组成部分占据着很重要的作用。但是<a id="more"></a>图像所占据的存储空间也越来越大，对于数据的传输和存储都带来了很大的压力。因此，图像压缩这一领域应势而生。图像压缩分为有损压缩和无损压缩。有损压缩会消除一部分冗余信息，但不会影响视觉感受，所以压缩比较高。而无损压缩则应用于对图像要求较高的航天及医学等领域。本文主要介绍无损压缩中的JPEG-LS算法。</p>
 <p>　　JPEG-LS为JPEG的无损/近无损压缩新标准，于1994年开始征集算法提案，1998年2月ITU-T建议T.87（草案）正式公布，用于取代原JPEG的连续色调静止图像的无损压缩模式。</p>
 <p>　　JPEG-LS压缩主要分为三大模块，一是预测，二是上下文建模，三是编码。框图如下：</p>
-<h2 id="算法详解"><a href="#算法详解" class="headerlink" title="算法详解"></a>算法详解</h2><p>　　未完待续……</p>
+<p><img src="/images/流程框图.png" align="center"></p>
+<h2 id="算法详解"><a href="#算法详解" class="headerlink" title="算法详解"></a>算法详解</h2><p>　　JPEG-LS包含一个非线性边缘检测器，可对水平边缘和垂直边缘进行检测。</p>
+<p><img src="/images/像素.png" align="center"></p>
+<p>　　通过当前像素值ｘ的领域像素来计算梯度值，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D1 = Xd - Xb;</span><br><span class="line">D2 = Xb - Xc;</span><br><span class="line">D3 = Xc - Xa;</span><br></pre></td></tr></table></figure>
+<p>　　计算梯度值后对梯度值进行量化，通过量化后的梯度值构建上下文模型，并选择编码方式。在JPEG-LS算法中，常规模式下使用哥伦布编码，当进入较为平坦的区域时，将选择游程编码的方式。</p>
+<p>　　### 像素值预测</p>
+<p>　　像素值预测基于梯度检测，其预测过程如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if Xc &gt;= max(Xa, Xb)</span><br><span class="line">    Px = min(Xa, Xb);</span><br><span class="line">else if Xc &lt;= min(Xa, Xb)</span><br><span class="line">    Px = max(Xa, Xb);</span><br><span class="line">else</span><br><span class="line">    Px = Xa + Xb - Xc;</span><br></pre></td></tr></table></figure>
+<p>　　然后对预测值进行修正，将其映射到[0, maxvalue]之间。计算预测残差值，同样对预测残差值进行映射，之后便可进入编码过程，对数据进行压缩。</p>
+<h3 id="哥伦布编码"><a href="#哥伦布编码" class="headerlink" title="哥伦布编码"></a>哥伦布编码</h3><p>　　在JPEG-LS中使用哥伦布编码，哥伦布编码由两部分组成，分别是n/m的二元码表示和n mod m的二进制直接表示。Rice提出当参数m为2的幂次时，可使计算过程大大简化。因此在哥伦布编码的过程中需要计算一个参数k，其计算如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(k = 0; (N[Q] &lt;&lt; k) &lt; A[Q]; k++)</span><br></pre></td></tr></table></figure>
+<p>其中N[Q]表示到目前为止，出现的残差数目，而A[Q]则是到目前为止，对量化残差绝对值的累计值。</p>
+<p>　　在编码的过程中，为了防止编码长度过长，影响压缩效率。会初始化一个最长编码长度。同时，会设置一个阈值N0，当N达到这个阈值时，便对相关变量进行重置。</p>
+<h2 id="算法优化"><a href="#算法优化" class="headerlink" title="算法优化"></a>算法优化</h2><p>　　JPEG-LS虽然是一种低复杂度的算法，但是其性能仍有诸多地方可进行优化。JPEG-LS算法在提出时为了考虑复杂度，便使用了复杂度较低的哥伦布编码，其性能差于算术编码。因此，可以考虑使用算术编码替换原有编码方式。</p>
+<p>　　另一方面，JPEG-LS使用的边缘检测器只能对水平边缘和垂直边缘进行检测。因此，可以考虑加入对角线检测的模式。</p>
+<p>　　水平边缘检测模式如下所示：</p>
+<p><img src="/images/水平.png" align="center"></p>
+<p>　　可加入对角线检测模式，如下所示：</p>
+<p><img src="/images/对角线.png" align="center"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>　　JPEG-LS算法是一种低复杂度的无损/近无损压缩算法。其核心思想是使用预测编码的思想。目前，随着深度学习的不断兴起，也出现了使用神经网络对图像进行压缩的方法。因此，如何利用好这种方法来对图像进行压缩将是后续的研究方向。</p>
 
       
     </div>
@@ -548,7 +572,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -657,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法概述"><span class="nav-number">1.</span> <span class="nav-text">算法概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法详解"><span class="nav-number">2.</span> <span class="nav-text">算法详解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法概述"><span class="nav-number">1.</span> <span class="nav-text">算法概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法详解"><span class="nav-number">2.</span> <span class="nav-text">算法详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#哥伦布编码"><span class="nav-number">2.1.</span> <span class="nav-text">哥伦布编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法优化"><span class="nav-number">3.</span> <span class="nav-text">算法优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
