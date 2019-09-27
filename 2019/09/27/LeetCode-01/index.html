@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="链表合并">
+<meta name="description" content="链表合并　　步入研究生的第二年，也即将面临就业问题。做每一件事情都需要未雨绸缪，做好准备才不会错失每个机会。">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode_01">
 <meta property="og:url" content="http://yoursite.com/2019/09/27/LeetCode-01/index.html">
 <meta property="og:site_name" content="驼城飞龙">
-<meta property="og:description" content="链表合并">
+<meta property="og:description" content="链表合并　　步入研究生的第二年，也即将面临就业问题。做每一件事情都需要未雨绸缪，做好准备才不会错失每个机会。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-27T13:38:24.882Z">
+<meta property="og:updated_time" content="2019-09-27T15:24:12.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode_01">
-<meta name="twitter:description" content="链表合并">
+<meta name="twitter:description" content="链表合并　　步入研究生的第二年，也即将面临就业问题。做每一件事情都需要未雨绸缪，做好准备才不会错失每个机会。">
 
 
 
@@ -372,7 +372,21 @@
       
 
       
-        <h2 id="链表合并"><a href="#链表合并" class="headerlink" title="链表合并"></a><center>链表合并</center></h2>
+        <h2 id="链表合并"><a href="#链表合并" class="headerlink" title="链表合并"></a><center>链表合并</center></h2><p>　　步入研究生的第二年，也即将面临就业问题。做每一件事情都需要未雨绸缪，做好准备才不会错失每个机会。<a id="more"></a>因此，本学年，我计划在LeetCode每日一题，一方面也巩固一下自己以前学到的算法和数据结构。今天是第一道题，是关于有序链表合并的问题。链表是线性表结构的一种表示方式，也是很重要的一种数据结构。在本科的数据结构课程中也是第一章内容。</p>
+<p>　　题目描述如下：</p>
+<p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists. </p>
+<p><strong>Example：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>解题思路</p>
+<p>单链表的定义如下：</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> val;</span><br><span class="line">	ListNode *next;</span><br><span class="line">	ListNode(<span class="keyword">int</span> x) : val(x), next(<span class="literal">NULL</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>合并两个链表前首先判断两个链表是否为空，在不为空的条件下，比较两个链表的值，并将较小的链接到第三个链表，相应的指针向后移动。代码示例如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(l1 == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> l2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l2 == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* result = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">if</span>(l1-&gt;val &lt;= l2-&gt; val)&#123;</span><br><span class="line">            result = l1;</span><br><span class="line">            l1 = l1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            result = l2;</span><br><span class="line">            l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* r = result;</span><br><span class="line">        <span class="keyword">while</span>(l1 &amp;&amp; l2)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val &lt;= l2-&gt;val)&#123;</span><br><span class="line">                r-&gt;next = l1;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                r-&gt;next = l2;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            r = r-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l1)&#123;</span><br><span class="line">            r-&gt;next = l1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            r-&gt;next = l2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>数据结构线性表中的知识点还有很多，如双链表，循环链表，链表的增删改查等，都是必须熟练掌握的，我会在后续的过程中对这些知识点进行更新。本人能力有限，如有错误之处，欢迎指出。</p>
+
       
     </div>
     
