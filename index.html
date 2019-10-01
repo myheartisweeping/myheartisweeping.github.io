@@ -282,6 +282,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/01/LeetCode-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bruce">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.pixabay.com/photo/2016/04/25/07/15/man-1351317__340.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="驼城飞龙">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/01/LeetCode-03/" itemprop="url">LeetCode-03</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-01T14:59:18+08:00">
+                2019-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天的题目仍然是关于链表的问题，给定两个非空的链表，将两个链表相加。给定的链表存放的值是逆序的，题目详细信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">You are given two non-empty linked lists representing two non-negative integers. The digits are     </span><br><span class="line">stored in reverse order and each of their nodes contain a single digit. Add the two numbers and  </span><br><span class="line">return it as a linked list.</span><br></pre></td></tr></table></figure>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</span><br><span class="line">Output: 7 -&gt; 0 -&gt; 8</span><br><span class="line">Explanation: 342 + 465 = 807.</span><br></pre></td></tr></table></figure>
+<p>本题需要考虑的边界条件比较多，在两个链表长度相等的情况下较好处理，如果两个链表的长度不相等，则较短的链表的值相当于是0。同时，要考虑进位，如果两个链表相加的值大于9时，进位为1。对于链表指针也要注意处理。具体代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line">    ListNode(<span class="keyword">int</span> x) : val(x), next(<span class="literal">nullptr</span>)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode * <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span></span>&#123;</span><br><span class="line">        ListNode* dummyHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode* p = l1, *q = l2, *curr = dummyHead;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>; <span class="comment">//进位</span></span><br><span class="line">        <span class="keyword">while</span>(p != <span class="literal">nullptr</span> || q != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> x = (p != <span class="literal">nullptr</span>) ? p-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> y = (q != <span class="literal">nullptr</span>) ? q-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> sum = x + y + carry;</span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            curr-&gt;next = <span class="keyword">new</span> ListNode(sum % <span class="number">10</span>);</span><br><span class="line">            curr = curr-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(p != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">                p = p-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(q != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">                q = q-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            curr-&gt;next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummyHead-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>本题答案参考了LeetCode solution，如有错误之处，欢迎批评指正。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/30/问题记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1597,156 +1745,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/无题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bruce">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.pixabay.com/photo/2016/04/25/07/15/man-1351317__340.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="驼城飞龙">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/23/无题/" itemprop="url">无题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T16:22:23+08:00">
-                2018-04-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/浮生日记/" itemprop="url" rel="index">
-                    <span itemprop="name">浮生日记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="https://cdn.pixabay.com/photo/2015/06/22/08/39/child-817371__340.jpg" alt="avator"></p>
-<p>　　深夜即将入睡的时候，听到隔壁小孩不停的哭着喊妈妈，倏忽发现自己已逾弱冠之年，早已不再拥有哭泣和寻求
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/23/无题/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1794,7 +1799,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1816,7 +1821,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
