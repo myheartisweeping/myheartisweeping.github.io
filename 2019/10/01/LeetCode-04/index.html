@@ -86,7 +86,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode," />
+  <meta name="keywords" content="LeetCode,C++," />
 
 
 
@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="链表合并　　步入研究生的第二年，也即将面临就业问题。做每一件事情都需要未雨绸缪，做好准备才不会错失每个机会。">
-<meta name="keywords" content="LeetCode">
+<meta name="description" content="今天的题目是一道关于字符串的问题。字符串在面试笔试中是出现频率较高的一种题型，所以对字符串的练习和掌握很有必要。今天的这道题目是找到无重复字符的最长子串。">
+<meta name="keywords" content="LeetCode,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_01">
-<meta property="og:url" content="http://yoursite.com/2019/09/27/LeetCode-01/index.html">
+<meta property="og:title" content="LeetCode-04">
+<meta property="og:url" content="http://yoursite.com/2019/10/01/LeetCode-04/index.html">
 <meta property="og:site_name" content="驼城飞龙">
-<meta property="og:description" content="链表合并　　步入研究生的第二年，也即将面临就业问题。做每一件事情都需要未雨绸缪，做好准备才不会错失每个机会。">
+<meta property="og:description" content="今天的题目是一道关于字符串的问题。字符串在面试笔试中是出现频率较高的一种题型，所以对字符串的练习和掌握很有必要。今天的这道题目是找到无重复字符的最长子串。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-27T15:24:12.312Z">
+<meta property="og:updated_time" content="2019-10-04T15:09:54.020Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_01">
-<meta name="twitter:description" content="链表合并　　步入研究生的第二年，也即将面临就业问题。做每一件事情都需要未雨绸缪，做好准备才不会错失每个机会。">
+<meta name="twitter:title" content="LeetCode-04">
+<meta name="twitter:description" content="今天的题目是一道关于字符串的问题。字符串在面试笔试中是出现频率较高的一种题型，所以对字符串的练习和掌握很有必要。今天的这道题目是找到无重复字符的最长子串。">
 
 
 
@@ -140,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/27/LeetCode-01/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/10/01/LeetCode-04/"/>
 
 
 
 
 
-  <title>LeetCode_01 | 驼城飞龙</title>
+  <title>LeetCode-04 | 驼城飞龙</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/LeetCode-01/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/01/LeetCode-04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bruce">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_01</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-04</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-27T21:31:19+08:00">
-                2019-09-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-01T16:35:42+08:00">
+                2019-10-01
               </time>
             
 
@@ -372,20 +372,24 @@
       
 
       
-        <h2 id="链表合并"><a href="#链表合并" class="headerlink" title="链表合并"></a><center>链表合并</center></h2><p>　　步入研究生的第二年，也即将面临就业问题。做每一件事情都需要未雨绸缪，做好准备才不会错失每个机会。<a id="more"></a>因此，本学年，我计划在LeetCode每日一题，一方面也巩固一下自己以前学到的算法和数据结构。今天是第一道题，是关于有序链表合并的问题。链表是线性表结构的一种表示方式，也是很重要的一种数据结构。在本科的数据结构课程中也是第一章内容。</p>
-<p>　　题目描述如下：</p>
-<p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists. </p>
-<p><strong>Example：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>解题思路</p>
-<p>单链表的定义如下：</p>
-</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> val;</span><br><span class="line">	ListNode *next;</span><br><span class="line">	ListNode(<span class="keyword">int</span> x) : val(x), next(<span class="literal">NULL</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>合并两个链表前首先判断两个链表是否为空，在不为空的条件下，比较两个链表的值，并将较小的链接到第三个链表，相应的指针向后移动。代码示例如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(l1 == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> l2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l2 == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* result = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">if</span>(l1-&gt;val &lt;= l2-&gt; val)&#123;</span><br><span class="line">            result = l1;</span><br><span class="line">            l1 = l1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            result = l2;</span><br><span class="line">            l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* r = result;</span><br><span class="line">        <span class="keyword">while</span>(l1 &amp;&amp; l2)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val &lt;= l2-&gt;val)&#123;</span><br><span class="line">                r-&gt;next = l1;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                r-&gt;next = l2;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            r = r-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l1)&#123;</span><br><span class="line">            r-&gt;next = l1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            r-&gt;next = l2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>数据结构线性表中的知识点还有很多，如双链表，循环链表，链表的增删改查等，都是必须熟练掌握的，我会在后续的过程中对这些知识点进行更新。本人能力有限，如有错误之处，欢迎指出。</p>
+        <p>今天的题目是一道关于字符串的问题。字符串在面试笔试中是出现频率较高的一种题型，所以对字符串的练习和掌握很有必要。今天的这道题目是找到无重复字符的最长子串。<a id="more"></a>题目如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Given a string, find the length of the longest substring without repeating characters.</span><br></pre></td></tr></table></figure>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;abcabcbb&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explantion: The answer is &quot;abc&quot;, with the length of 3.</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;bbbb&quot;</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: The answer is &quot;b&quot;, with the length of 1.</span><br></pre></td></tr></table></figure>
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;pwwkew&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: The answer is &quot;wwke&quot;, with the length of 3.</span><br><span class="line">             Note that the answer must be a substring, &quot;pwke&quot; is a subsquence and not a substring.</span><br></pre></td></tr></table></figure>
+<h2 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h2><p>本题的解答过程参考了LeetCode Solution。看到本题的第一思路就是暴力解法，即遍历所有的子串，看其中是否存在相同的字符。暴力求解算法如下所示：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =  <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt;= n; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(allUnique(s, i, j))&#123;</span><br><span class="line">                    ans = max(ans, j-i);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">allUnique</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="keyword">char</span>&gt; <span class="built_in">set</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = start; i &lt; end; i++)&#123;</span><br><span class="line">            <span class="keyword">char</span> ch = s[i];</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">set</span>.count(ch) == <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">set</span>.insert(ch);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>虽然这种暴力解法是最简单易懂的，但是这种方式在实际工作中是最不可取的，因为在面对一个很长的字符串时，其时间复杂度为O(n^3)。导致其执行时间过长，而无法在正常的时间内产生结果。所以必须优化暴力解法。</p>
+<h2 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h2><p>第一种方式中我们遍历了所有的子串，并循环判断每个子串中是否含有相同的元素，这其中包含了很多重复的比较。比如说在判断子串 $S_(ij)$ 时，如果从索引 $i$ 到 $j-1$ 已经检查为没有重复的字符，则我们只需要判断 $s[j]$ 是够在子串 $S_(ij)$ 中即可。解法二中我们采用一种滑窗的方法来解决这个问题。初始化窗口 $[i,j)$ $(j = i)$，然后我们将索引 $j$ 向右移动，当遇到相同的元素时，我们将 $i+1$ 。代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="keyword">char</span>&gt; <span class="built_in">set</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; n &amp;&amp; j &lt; n)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">set</span>.count(s[j] == <span class="number">0</span>))&#123;</span><br><span class="line">                <span class="built_in">set</span>.insert(s[j++]);</span><br><span class="line">                ans = max(ans, j-i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">set</span>.erase(s[i++]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="解法三"><a href="#解法三" class="headerlink" title="解法三"></a>解法三</h2><p>第二种解法虽然较第一种方式有了很大的改进，但是其中仍有一些冗余的比较。第二种解法中，在遇到相同的字符 $s[j^<em>]$之后，我们将索引 $i$ 向右加一。其实，我们可以直接移动到 $j^</em>+1$ 的位置，我们使用 $map$ 结构来记录索引，代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; <span class="built_in">map</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>, i = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">map</span>.count(s[j]) == <span class="number">1</span>)&#123;</span><br><span class="line">                i = max(<span class="built_in">map</span>(s[j]), i);</span><br><span class="line">            &#125;</span><br><span class="line">            ans = max(ans, j - i + <span class="number">1</span>);</span><br><span class="line">            <span class="built_in">map</span>[s[j]] = j+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="解法四"><a href="#解法四" class="headerlink" title="解法四"></a>解法四</h2><p>第四种解法的思想和第三种的思想是一致的，只是使用一个数组来替换了上述解法的 $map$ 结构。代码如下所示。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length(), ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> *index = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">256</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>, i = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">            i = max(index[s[j]], i);</span><br><span class="line">            ans = max(ans, j-i+<span class="number">1</span>);</span><br><span class="line">            index[s[j]] = j+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>本题参考LeetCode Solution解题过程，因本人能力有限，如有错误之处，欢迎批评指正。</p>
 
       
     </div>
@@ -429,6 +433,8 @@
           
             <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
         </div>
       
 
@@ -455,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/13/回首/" rel="next" title="回首">
-                <i class="fa fa-chevron-left"></i> 回首
+              <a href="/2019/10/01/LeetCode-03/" rel="next" title="LeetCode-03">
+                <i class="fa fa-chevron-left"></i> LeetCode-03
               </a>
             
           </div>
@@ -464,10 +470,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/28/LeetCode-02/" rel="prev" title="LeetCode_02　">
-                LeetCode_02　 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -662,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#链表合并"><span class="nav-number">1.</span> <span class="nav-text">链表合并</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解法一"><span class="nav-number">1.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法二"><span class="nav-number">2.</span> <span class="nav-text">解法二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法三"><span class="nav-number">3.</span> <span class="nav-text">解法三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法四"><span class="nav-number">4.</span> <span class="nav-text">解法四</span></a></li></ol></div>
             
 
           </div>
