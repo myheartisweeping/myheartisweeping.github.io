@@ -86,7 +86,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode," />
+  <meta name="keywords" content="LeetCode,C++," />
 
 
 
@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="今天的LeetCode题目为删除一个有序数组中的重复元素。初看这道题目的第一思路是，定义一个新的数组。for 循环给定数组，比较当前元素与前一个元素是否相等，如果相等，则继续向后比较，如果不相等，则将该元素置于新的数组中。这个方法虽然简单易懂，但是申请了额外的空间，所以并非是最优方法。伪代码如下： 12345678910int removeDuplicates(vector&amp;lt;int&amp;gt">
-<meta name="keywords" content="LeetCode">
+<meta name="description" content="今天的题目是求两个有序数组的中位数，两个数组的长度分别是 $m$ 和 $n$ 。并要求时间复杂度为 $O(\log(m+n))$。我们假定两个数组均不为空。具体题目如下：">
+<meta name="keywords" content="LeetCode,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_02　">
-<meta property="og:url" content="http://yoursite.com/2019/09/28/LeetCode-02/index.html">
+<meta property="og:title" content="LeetCode-05">
+<meta property="og:url" content="http://yoursite.com/2019/10/05/LeetCode-05/index.html">
 <meta property="og:site_name" content="驼城飞龙">
-<meta property="og:description" content="今天的LeetCode题目为删除一个有序数组中的重复元素。初看这道题目的第一思路是，定义一个新的数组。for 循环给定数组，比较当前元素与前一个元素是否相等，如果相等，则继续向后比较，如果不相等，则将该元素置于新的数组中。这个方法虽然简单易懂，但是申请了额外的空间，所以并非是最优方法。伪代码如下： 12345678910int removeDuplicates(vector&amp;lt;int&amp;gt">
+<meta property="og:description" content="今天的题目是求两个有序数组的中位数，两个数组的长度分别是 $m$ 和 $n$ 。并要求时间复杂度为 $O(\log(m+n))$。我们假定两个数组均不为空。具体题目如下：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-29T02:39:47.307Z">
+<meta property="og:updated_time" content="2019-10-06T08:44:28.877Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_02　">
-<meta name="twitter:description" content="今天的LeetCode题目为删除一个有序数组中的重复元素。初看这道题目的第一思路是，定义一个新的数组。for 循环给定数组，比较当前元素与前一个元素是否相等，如果相等，则继续向后比较，如果不相等，则将该元素置于新的数组中。这个方法虽然简单易懂，但是申请了额外的空间，所以并非是最优方法。伪代码如下： 12345678910int removeDuplicates(vector&amp;lt;int&amp;gt">
+<meta name="twitter:title" content="LeetCode-05">
+<meta name="twitter:description" content="今天的题目是求两个有序数组的中位数，两个数组的长度分别是 $m$ 和 $n$ 。并要求时间复杂度为 $O(\log(m+n))$。我们假定两个数组均不为空。具体题目如下：">
 
 
 
@@ -140,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/28/LeetCode-02/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/10/05/LeetCode-05/"/>
 
 
 
 
 
-  <title>LeetCode_02　 | 驼城飞龙</title>
+  <title>LeetCode-05 | 驼城飞龙</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/LeetCode-02/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/05/LeetCode-05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bruce">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode_02　</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-05</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-28T23:20:04+08:00">
-                2019-09-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-05T14:52:41+08:00">
+                2019-10-05
               </time>
             
 
@@ -372,16 +372,36 @@
       
 
       
-        <p>　　今天的LeetCode题目为删除一个有序数组中的重复元素。初看这道题目的第一思路是，定义一个新的数组。for 循环给定数组，比较当前元素与前一个元素是否相等，如果相等，则继续向后比较，如果不相等，则将该元素置于新的数组中。这个方法虽然简单易懂，但是申请了额外的空间，所以并非是最优方法。伪代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">    result.push_back(nums[<span class="number">0</span>])；</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i] !== nums[i<span class="number">-1</span>])&#123;</span><br><span class="line">            result.push_back(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>　　在不申请额外空间的情况下如何删除相同的元素。换个角度理解就是如何将不相同的元素放置在相邻的位置。为了将不相同的元素移动到相邻的位置，我们便需要记录出现相同元素的位置，以便在出现不同的元素时，将其移到该位置。</p>
-<p>　　解法一如下所示，我们使用了一个变量来记录出现相同元素的次数。以此来定位该放置的位置。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(nums[i] == nums[i<span class="number">-1</span>])&#123;</span><br><span class="line">			count++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            nums[i-count] = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums.size()-count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>　　解法二如下所示，我们定义一个变量来记录第一次出现相同元素的索引，一旦出现不同的元素，便将该元素移动到该索引值对应的位置。否则，该索引值保持不变。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.size() = <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i] != nums[index])&#123;</span><br><span class="line">			nums[index++] = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> index+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>同时，记录一下LeetCode中遇到的一个问题如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Runtime Error Message:reference binding to null pointer of type &apos;value_type&apos;</span><br></pre></td></tr></table></figure>
-<p>这种情况可能为数组越界，也有可能是测试样例中的输入为空。因此，在程序处理之前，一定要判断输入是否为空，是否合法。本次遇到的问题就是由于未对输入数组的长度进行判断，加入判断数组长度是否为0即可。能力有限，如有错误之处，欢迎批评指正。</p>
+        <p>今天的题目是求两个有序数组的中位数，两个数组的长度分别是 $m$ 和 $n$ 。并要求时间复杂度为 $O(\log(m+n))$。我们假定两个数组均不为空。具体题目如下：<a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log(m+n)). You may assume nums1 and nums2 cannot be both empty.</span><br></pre></td></tr></table></figure>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nums1 = [1, 3]</span><br><span class="line">nums2 = [2]</span><br><span class="line">The median is 2.0</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nums1 = [1, 2]</span><br><span class="line">nums2 = [3, 4]</span><br><span class="line">The median is (2+3)/2 = 2.5</span><br></pre></td></tr></table></figure>
+<h2 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h2><p>看到这道题，如果不考虑时间复杂度，最简单粗暴的办法就是将两个数组合并为一个数组，合并后的数组长度如果是奇数，则中间的一个数便是中位数，如果长度为偶数，则中位数为中间两个数的均值。代码如下所示：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n1 = nums1.size();</span><br><span class="line">        <span class="keyword">int</span> n2 = nums2.size();</span><br><span class="line">        <span class="keyword">int</span> sumLen = n1 + n2;</span><br><span class="line">        <span class="keyword">double</span> ans = <span class="number">0.0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n2; i++)&#123;</span><br><span class="line">            nums1.push_back(nums2[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(nums1.begin(), nums1.end());</span><br><span class="line">        <span class="keyword">if</span>(sumLen % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">            ans = (nums1[sumLen/<span class="number">2</span>] + nums1[sumLen / <span class="number">2</span> <span class="number">-1</span>]) / <span class="number">2.0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            ans = nums1[sumLen/<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h2><p>解法一中的时间消耗一是合并两个数组，二是对数组进行排序，所以算法复杂度主要是由排序算法决定的。同时也没有利用到有序这个信息。所以解法二的思想是将两个数组分别分成左右两个部分，使得左右两部分的长度相等，并且满足左边的最大值小于右边的最小值，即满足下述两条：</p>
+<ol>
+<li>len(left_part) = len(right_part)</li>
+<li>max(left_part) &lt;= min(right_part)</li>
+</ol>
+<p>为满足上述两个条件，我们需要保证以下条件，其中 $i$ 为数组A的分割点，$j$ 为数组B的分割点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. i + j = m - i + n - j(or: m-i+n-j+1)</span><br><span class="line">   if n &gt; m, we just need to set: i=0~m, j = (m+n+1)/2 - i</span><br><span class="line">2. B[j-1] &lt;= A[i] and A[i-1] &lt;= B[j]</span><br></pre></td></tr></table></figure>
+<p>同时，我们要保证 $n &gt; m$ 。因为 $0&lt;=i&lt;=m$ 并且 $j = \frac {m+n+1} {2} - i$ ，所以如果 $n&lt; m$ ,那么$j$ 有可能是负值，这将导致错误的结果。在寻找  $i$ 时，我们使用二分查找，需要考虑三种情况：</p>
+<ul>
+<li><p>$B[j-1]$ &lt;= $A[i]$ and $A[i-1]$ &lt;= $B[j]$</p>
+<p>这意味着我们找到了合适的 $i$ ，停止搜索。</p>
+</li>
+<li><p>$B[j-1] &gt; A[i]$</p>
+<p>这意味着 $i$ 太小，所以我们将 $i$ 的左边界加一。</p>
+</li>
+<li><p>$A[i-1] &gt; B[j]$</p>
+<p>这意味着 $i$ 太大，我们将 $i$ 的右边界减一。</p>
+</li>
+</ul>
+<p>具体c++代码如下所示：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = nums1.size();</span><br><span class="line">        <span class="keyword">int</span> n = nums2.size();</span><br><span class="line">        <span class="keyword">if</span>(m &gt; n)&#123;</span><br><span class="line">            nums1.swap(nums2);</span><br><span class="line">            <span class="keyword">int</span> temp = m;</span><br><span class="line">            m = n;</span><br><span class="line">            n = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> iMin = <span class="number">0</span>, iMax = m, halfLen = (m + n + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span>(iMin &lt;= iMax0)&#123;</span><br><span class="line">            <span class="keyword">int</span> i = (iMin + iMax) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> j = halfLen - i;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; iMax &amp;&amp; nums2[j<span class="number">-1</span>] &gt; nums1[i])&#123;</span><br><span class="line">                iMin = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i &gt; iMin &amp;&amp; nums1[i<span class="number">-1</span>] &gt; nums2[j])&#123;</span><br><span class="line">                iMax = i - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">int</span> maxLeft = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(i == <span class="number">0</span>)&#123;</span><br><span class="line">                    maxLeft = nums2[j<span class="number">-1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(j == <span class="number">0</span>)&#123;</span><br><span class="line">                    maxLeft = nums1[i<span class="number">-1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    maxLeft = max(nums1[i<span class="number">-1</span>], nums2[j<span class="number">-1</span>]);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>((m+n) % <span class="number">2</span> == <span class="number">1</span>)&#123;</span><br><span class="line">                    <span class="keyword">return</span> maxLeft;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">int</span> minRigght = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(i == m)&#123;</span><br><span class="line">                    minRight = nums2[j];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(j == n)&#123;</span><br><span class="line">                    minRight = nums1[i];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    minRight = min(nums1[i], nums2[j]);</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">return</span> (maxLeft + minRight) / <span class="number">2.0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>本题参考了Solution，本人能力有限，如有错误之处，欢迎批评指正。</p>
 
       
     </div>
@@ -425,6 +445,8 @@
           
             <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
         </div>
       
 
@@ -451,8 +473,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/27/LeetCode-01/" rel="next" title="LeetCode_01">
-                <i class="fa fa-chevron-left"></i> LeetCode_01
+              <a href="/2019/10/01/LeetCode-04/" rel="next" title="LeetCode-04">
+                <i class="fa fa-chevron-left"></i> LeetCode-04
               </a>
             
           </div>
@@ -460,10 +482,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/30/问题记录/" rel="prev" title="Python安装pandas的问题">
-                Python安装pandas的问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -520,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -639,6 +666,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解法一"><span class="nav-number">1.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法二"><span class="nav-number">2.</span> <span class="nav-text">解法二</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
