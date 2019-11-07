@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="以人为镜，可以知不足。翻阅优秀的人所写的文章和博客，会愈发的看到自己的无知和肤浅。可不论多么优秀的人，都离不开一点一滴的努力。所以，不足不可怕，可怕的是看不到。对于算法的学习，切不能求于表面，而应深入理解，将其化为自身所有。">
+<meta name="description" content="今天的题目是实现字符串到整数的函数(atoi)。">
 <meta name="keywords" content="LeetCode,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode-07">
-<meta property="og:url" content="http://yoursite.com/2019/11/05/LeetCode-07/index.html">
+<meta property="og:title" content="LeetCode-08">
+<meta property="og:url" content="http://yoursite.com/2019/11/07/LeetCode-08/index.html">
 <meta property="og:site_name" content="驼城飞龙">
-<meta property="og:description" content="以人为镜，可以知不足。翻阅优秀的人所写的文章和博客，会愈发的看到自己的无知和肤浅。可不论多么优秀的人，都离不开一点一滴的努力。所以，不足不可怕，可怕的是看不到。对于算法的学习，切不能求于表面，而应深入理解，将其化为自身所有。">
+<meta property="og:description" content="今天的题目是实现字符串到整数的函数(atoi)。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-06T14:58:56.983Z">
+<meta property="og:updated_time" content="2019-11-07T15:37:43.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode-07">
-<meta name="twitter:description" content="以人为镜，可以知不足。翻阅优秀的人所写的文章和博客，会愈发的看到自己的无知和肤浅。可不论多么优秀的人，都离不开一点一滴的努力。所以，不足不可怕，可怕的是看不到。对于算法的学习，切不能求于表面，而应深入理解，将其化为自身所有。">
+<meta name="twitter:title" content="LeetCode-08">
+<meta name="twitter:description" content="今天的题目是实现字符串到整数的函数(atoi)。">
 
 
 
@@ -140,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/05/LeetCode-07/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/11/07/LeetCode-08/"/>
 
 
 
 
 
-  <title>leetcode-07 | 驼城飞龙</title>
+  <title>LeetCode-08 | 驼城飞龙</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/05/LeetCode-07/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/07/LeetCode-08/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bruce">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">leetcode-07</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-08</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-05T17:38:11+08:00">
-                2019-11-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-07T10:56:38+08:00">
+                2019-11-07
               </time>
             
 
@@ -372,22 +372,24 @@
       
 
       
-        <p>　　以人为镜，可以知不足。翻阅优秀的人所写的文章和博客，会愈发的看到自己的无知和肤浅。可不论多么优秀的人，都离不开一点一滴的努力。所以，不足不可怕，可怕的是看不到。对于算法的学习，切不能求于表面，而应深入理解，将其化为自身所有。<a id="more"></a></p>
-<p>　　今天的题目是ZigZag转换，将ZigZag描述的字符串按行顺序读出。题目描述如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like  this:</span><br><span class="line">P   A   H   N</span><br><span class="line">A P L S I I G</span><br><span class="line">Y   I   R</span><br><span class="line">And then read line by line: &quot;PAHNAPLSIIGYIG&quot;</span><br><span class="line">Write the code that will take a string and make this conversion given a number of rows:</span><br><span class="line">string convert(string s, int numRows);</span><br></pre></td></tr></table></figure>
-<p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;PAYPALISHIRING&quot;, numRows = 3</span><br><span class="line">Output: “PAHNAPLSIIGYIG&quot;</span><br></pre></td></tr></table></figure>
+        <p>今天的题目是实现字符串到整数的函数(atoi)。<a id="more"></a>给定的字符串中包含空格，以及非数值字符。第一个出现的非空格字符表示数值的符号。如果不能进行转换，即不存在数值，则返回0。测试用例如下所示：</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Only the space character ‘ ‘ is considered as whitespace character.</li>
+<li>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: $[(-2)^{31}, 2^{31}-1]$, if the numerical value is out of the range of representable values, INT_MAX $(2^{31}-1)$ or INT_MIN $(-2^{31})$ is returned.</li>
+</ul>
+<p><strong>Example 1: </strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;42&quot;</span><br><span class="line">Output: 42</span><br></pre></td></tr></table></figure>
 <p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;PAYPALISHIRING&quot;, numRows = 4</span><br><span class="line">Output: &quot;PINALSIGYAHRPI&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h2><p>本题的第一思路是按照顺序去遍历整个字符串，即按照顺序分别将字符放置到对应的行中。我们需要设置一个变量来指示现在的方向，为1的时候表示向下，为-1的时候表示向上。代码如下所示：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> numRows)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span> || numRows &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; result(numRows);</span><br><span class="line">        <span class="built_in">string</span> ans;</span><br><span class="line">        <span class="keyword">int</span> direct = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> row = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            result[row] += s[i];</span><br><span class="line">            row += direct;</span><br><span class="line">            <span class="keyword">if</span>(row == numRows)&#123;</span><br><span class="line">                row = numRows - <span class="number">2</span>;</span><br><span class="line">                direct = <span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(row &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                row = <span class="number">1</span>;</span><br><span class="line">                direct = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numRows; i++)&#123;</span><br><span class="line">            ans += result[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h2><p>解法二的思路是找到对应行与原字符串之间的规律。假设numRows = 3，将对应值列出如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string: P A Y P A L I S H I R I N G</span><br><span class="line">row:    1 2 3 2 1 2 3 2 1 2 3 2 1 2</span><br></pre></td></tr></table></figure>
-<p>由上可观察得出，每行出现的周期为2 * nRows - 2</p>
-<p>首行和尾行之间的数据会多出现一次，出现的位置距离本次周期的起始位置为：2 <em> nRows - 2 - 2 </em> i 。</p>
-<p>所以可根据此规律编写代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> numRows)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">1</span> || numRows &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">string</span> ans;</span><br><span class="line">        <span class="keyword">int</span> lag = <span class="number">2</span>*numRows - <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numRows; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; len; j += lag)&#123;</span><br><span class="line">                ans += s[j];</span><br><span class="line">                <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; i &lt; numRows<span class="number">-1</span>)&#123;</span><br><span class="line">                    <span class="keyword">int</span> t = j + lag - <span class="number">2</span> * i;</span><br><span class="line">                    <span class="keyword">if</span>(t &lt; len)&#123;</span><br><span class="line">                        ans += s[t];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>本题参考博客：<a href="https://blog.csdn.net/ljiabin/article/details/40477429" target="_blank" rel="noopener">https://blog.csdn.net/ljiabin/article/details/40477429</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;    -42&quot;</span><br><span class="line">Output: -42</span><br><span class="line">Explanation: The first non-whitespace character is &apos;-&apos;, which is the minus sign. Then take as many              numerical digits as possible, which gets 42.</span><br></pre></td></tr></table></figure>
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;4193 with words&quot;</span><br><span class="line">Output: 4193</span><br><span class="line">Explanation: Conversion stops at digit &apos;3&apos; as the next character is not a numerical digit.</span><br></pre></td></tr></table></figure>
+<p><strong>Example 4:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;words and 987&quot;</span><br><span class="line">Output: 0</span><br><span class="line">Explanation: The first non-whitespace character is &apos;w&apos;, which is not a numerical digit or a +/-                  sign. Therefore no valid conversion could be performed.</span><br></pre></td></tr></table></figure>
+<p><strong>Example 5:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;-91283472332&quot;</span><br><span class="line">Output: -2147483648</span><br><span class="line">Explanation: The number &quot;-91283472332&quot; is out of the range of a 32-bit signed integer. Therefore                INT_MIN is returned.</span><br></pre></td></tr></table></figure>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>本题较为简单，对于给定的字符串，我们依次遍历字符串，去掉前导空格后，遇到第一个非空字符，判断其正负号。然后继续遍历下去，直到遇到非数值字符。具体代码如下所示：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(<span class="built_in">string</span> str)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = str.length();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; len; i++)&#123; <span class="comment">//discard whitespace</span></span><br><span class="line">            <span class="keyword">if</span>(str[i] != <span class="string">' '</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">bool</span> symbol = <span class="literal">false</span>; <span class="comment">// if negative, symbol = true</span></span><br><span class="line">        <span class="keyword">if</span>(str[i] == <span class="string">'-'</span>)&#123;</span><br><span class="line">            symbol = <span class="literal">true</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(str[i] == <span class="string">'+'</span>)&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; len; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">isdigit</span>(str[j]))&#123;</span><br><span class="line">                result = result * <span class="number">10</span> + str[j];</span><br><span class="line">                <span class="keyword">if</span>(symbol &amp;&amp; -result &lt; INT_MIN)&#123;</span><br><span class="line">                    <span class="keyword">return</span> INT_MIN;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(!symbol &amp;&amp; result &gt; INT_MAX)&#123;</span><br><span class="line">                    <span class="keyword">return</span> INT_MAX;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(symbol)&#123;</span><br><span class="line">            <span class="keyword">return</span> -result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -459,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/08/LeetCode-06/" rel="next" title="LeetCode-06">
-                <i class="fa fa-chevron-left"></i> LeetCode-06
+              <a href="/2019/11/05/LeetCode-07/" rel="next" title="leetcode-07">
+                <i class="fa fa-chevron-left"></i> leetcode-07
               </a>
             
           </div>
@@ -468,10 +470,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/07/LeetCode-08/" rel="prev" title="LeetCode-08">
-                LeetCode-08 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -666,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解法一"><span class="nav-number">1.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法二"><span class="nav-number">2.</span> <span class="nav-text">解法二</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解题思路"><span class="nav-number">1.</span> <span class="nav-text">解题思路</span></a></li></ol></div>
             
 
           </div>
